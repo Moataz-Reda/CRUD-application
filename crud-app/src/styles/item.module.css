@@ -1,0 +1,45 @@
+.itemContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin-right: 10px;
+  min-width: 100px;
+  min-height: 200px;
+}
+
+.deleteIcon {
+  width: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.editIcon {
+  width: 23px;
+  position: absolute;
+  top: 30px;
+  right: 3px;
+  cursor: pointer;
+}
+
+.confirmIcon {
+  width: 23px;
+  display: flex;
+  align-self: center;
+  margin-top: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.cancelIcon {
+  width: 23px;
+  display: flex;
+  align-self: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
