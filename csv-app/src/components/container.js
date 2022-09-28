@@ -128,12 +128,10 @@ const Container = () => {
         )
       });
 
-      console.log(resultObj)
       let data = [];
       Object.keys(resultObj).map((key) => {
         return data.push([key, mostPopularBrand(resultObj[key])])
       })
-      console.log(data)
 
       setIsError(false);
       setData1(data);
