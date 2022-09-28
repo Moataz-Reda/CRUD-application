@@ -87,11 +87,11 @@ const Container = () => {
 
   const mostPopularBrand = (brandsList) => {
     return Object.entries(
-      brandsList?.reduce((a, v) => {
-        a[v] = a[v] ? a[v] + 1 : 1;
-        return a;
+      brandsList?.reduce((previousValue, currentValue) => {
+        previousValue[currentValue] = previousValue[currentValue] ? previousValue[currentValue] + 1 : 1;
+        return previousValue;
       }, {})
-    )?.reduce((a, v) => (v[1] >= a[1] ? v : a), [null, 0])[0];
+    )?.reduce((previousValue, currentValue) => (currentValue[1] >= previousValue[1] ? currentValue : previousValue), [null, 0])[0];
   }
 
   const handleParse1 = () => {
