@@ -1,0 +1,1 @@
+export const baseApiUrl = "https://test-be498-default-rtdb.firebaseio.com/";

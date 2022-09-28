@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import styles from '../styles/items.module.css';
 import Item from './item';
 import addIcon from '../icons/plus.png';
+import { baseApiUrl } from '../utilities';
 
 const Items = () => {
   const [items, setItems] = useState([]);
 
   const loadItems = () => {
-    fetch('https://test-be498-default-rtdb.firebaseio.com/.json').then((response) => {
+    fetch(baseApiUrl + '.json').then((response) => {
       return response.json()
     }).then((json) => {
       if (json === null) {

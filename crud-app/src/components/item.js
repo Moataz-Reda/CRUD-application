@@ -4,6 +4,7 @@ import editIcon from '../icons/edit.png';
 import cancelIcon from '../icons/multiply.png';
 import confirmIcon from '../icons/check.png';
 import { useState } from 'react';
+import { baseApiUrl } from '../utilities';
 
 const Item = (props) => {
   const [isEdit, setIsEdit] = useState(false);
@@ -19,7 +20,7 @@ const Item = (props) => {
       age: age
     }
 
-    fetch(`https://test-be498-default-rtdb.firebaseio.com/${props.id}.json`, {
+    fetch(`${baseApiUrl}${props.id}.json`, {
       method: 'PUT',
       body: JSON.stringify(itemObject)
     }).then((response) => {
@@ -37,7 +38,7 @@ const Item = (props) => {
       age: age
     }
 
-    fetch(`https://test-be498-default-rtdb.firebaseio.com/.json`, {
+    fetch(`${baseApiUrl}.json`, {
       method: 'POST',
       body: JSON.stringify(itemObject)
     }).then((response) => {
@@ -49,7 +50,7 @@ const Item = (props) => {
   }
 
   const handleDelete = () => {
-    fetch(`https://test-be498-default-rtdb.firebaseio.com/${props.id}.json`, {
+    fetch(`${baseApiUrl}${props.id}.json`, {
       method: 'DELETE'
     }).then((response) => {
       return response.json();
